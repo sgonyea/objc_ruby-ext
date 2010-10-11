@@ -50,12 +50,12 @@ void fraction_free(Fraction *fraction) {
 }
 
 VALUE fraction_allocate(VALUE klass) {
-  Fraction *fraction = [[Fraction alloc] init];
+  frac = [[Fraction alloc] init];
 
-  [fraction setDenominator:Qnil];
-  [fraction setNumerator:Qnil];
+  [frac setDenominator:Qnil];
+  [frac setNumerator:Qnil];
 
-  return Data_Wrap_Struct(klass, fraction_mark, fraction_free, fraction);
+  return Data_Wrap_Struct(klass, fraction_mark, fraction_free, frac);
 }
 
 VALUE fraction_initialize(VALUE self) {
