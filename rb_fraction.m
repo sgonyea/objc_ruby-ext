@@ -3,7 +3,6 @@
 // Defining a space for information and references about the module to be stored internally
 VALUE               rb_cFraction = Qnil;
 Fraction           *frac;
-NSAutoreleasePool  *pool;
 
 void Init_fraction() {
   frac          = [[Fraction alloc] init];
