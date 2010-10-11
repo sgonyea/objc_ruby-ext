@@ -62,7 +62,7 @@ VALUE fraction_allocate(VALUE klass) {
 }
 
 VALUE fraction_initialize(VALUE self) {
-// Can't use Data_Get_Struct, but it's 'coo.
+// Can't use Data_Get_Struct, as it performs strict type checking for a C struct... and rejects ObjC Objects.
 //  Data_Get_Struct(self, Fraction, fraction);
   frac = (Fraction*)DATA_PTR(self);
   return self;
