@@ -1,8 +1,8 @@
 #import "rb_fraction.h"
 
 // Defining a space for information and references about the module to be stored internally
-VALUE               rb_cFraction = Qnil;
-Fraction           *frac;
+VALUE     rb_cFraction  = Qnil;
+Fraction *frac          = nil;
 
 void Init_fraction() {
   frac          = [[Fraction alloc] init];
