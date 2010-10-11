@@ -62,10 +62,9 @@ VALUE fraction_allocate(VALUE klass) {
 }
 
 VALUE fraction_initialize(VALUE self) {
-  Fraction *fraction;
 // Can't use Data_Get_Struct, but it's 'coo.
 //  Data_Get_Struct(self, Fraction, fraction);
-  fraction = (Fraction*)DATA_PTR(self);
+  frac = (Fraction*)DATA_PTR(self);
   return self;
 }
 

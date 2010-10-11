@@ -1,8 +1,10 @@
-puts %Q{requiring... ./fraction}
+puts %Q{requiring... './fraction'}
 puts require './fraction'
 
-puts %Q{including... Fraction}
-puts a = Fraction.new
+puts "initializing Fraction..."
+
+puts "a = Fraction.new"
+puts "=> #{a = Fraction.new}"
 
 puts "a.numerator = 23"
 puts "=> #{a.numerator = 23}"

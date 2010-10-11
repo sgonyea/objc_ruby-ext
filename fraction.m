@@ -1,7 +1,7 @@
 #import "Fraction.h"
 
 @implementation Fraction
--(void)   setNumerator: (VALUE) _numerator {
+-(void)   setNumerator:   (VALUE) _numerator {
     numerator = _numerator;
 }
 
