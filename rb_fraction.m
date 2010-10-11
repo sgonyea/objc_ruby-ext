@@ -8,11 +8,13 @@ void Init_fraction() {
   frac          = [[Fraction alloc] init];
   rb_cFraction  = rb_define_class("Fraction", rb_cObject);
 
+  rb_define_alloc_func(rb_cFraction, fraction_allocate);
+
   rb_define_method(rb_cFraction, "initialize",    fraction_initialize,  0);
   rb_define_method(rb_cFraction, "numerator=",    rb_set_numerator,     1);
   rb_define_method(rb_cFraction, "numerator",     rb_get_numerator,     0);
-  rb_define_method(rb_cFraction, "denominator",   rb_get_denominator,   0);
   rb_define_method(rb_cFraction, "denominator=",  rb_set_denominator,   1);
+  rb_define_method(rb_cFraction, "denominator",   rb_get_denominator,   0);
 }
 
 VALUE rb_get_numerator(VALUE self) {
@@ -49,7 +51,9 @@ void fraction_free(Fraction *fraction) {
 }
 
 VALUE fraction_allocate(VALUE klass) {
-  frac = [[Fraction alloc] init];
+  if(!frac) {
+    frac = [[Fraction alloc] init];
+  }
 
   [frac setDenominator:Qnil];
   [frac setNumerator:Qnil];
